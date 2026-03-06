@@ -65,10 +65,10 @@ export default function AboutUs() {
                             A renowned name in the web, mobile design, and software industry.
                         </h2>
                         <p className="text-slate-400 text-lg mb-6 leading-relaxed">
-                            Strandix System (Thoughtwin) assists to develop an impeccable website and mobile application. We serve on numerous domains and transform client's thoughts into reality.
+                            Strandix System India Pvt. Ltd. is a technology services company based in Indore, Madhya Pradesh, focusing on web, mobile, and ERP software development.
                         </p>
                         <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                            We design and develop websites that represent your company and spread across the globe. Our team blends deep software engineering with AI and modern cloud architecture.
+                            We provide customized digital solutions, including UI/UX design, Flutter, React Native, and blockchain development, aimed at helping startups and SMEs build secure, scalable applications.
                         </p>
                         <div className="flex gap-4">
                             <button className="px-8 py-3 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition-colors">Our History</button>
