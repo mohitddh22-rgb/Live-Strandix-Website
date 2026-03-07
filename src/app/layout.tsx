@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "STRANDIX — The Backbone of Enterprise Intelligence",
+  title: "STRANDIX — The Backbone of Global Intelligence",
   description:
     "Institutional-grade stability for next-generation data pipelines. Connect, process, and automate with confidence at planetary scale.",
 };

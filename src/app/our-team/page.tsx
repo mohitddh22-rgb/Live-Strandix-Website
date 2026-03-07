@@ -8,40 +8,46 @@ import Link from "next/link";
 
 const team = [
     {
-        name: 'Dr. Elena Vance',
-        role: 'Chief Architect',
-        bio: 'Visionary in distributed systems and former lead at CERN Data Center.',
-        expertise: 'Core Engine',
+        name: 'Shashi Dadhich',
+        role: 'Director / Planning',
+        bio: 'Visionary leader driving strategic growth and organizational excellence.',
+        expertise: 'Planning',
+        image: '/team/shashi_dadhich.jpg'
     },
     {
-        name: 'Marcus Thorne',
-        role: 'Security Director',
-        bio: 'Expert in high-assurance defense systems and kinetic cybersecurity.',
-        expertise: 'Hardening',
+        name: 'Anand Rathore',
+        role: 'Founder / Director',
+        bio: 'Strategic visionary behind Strandix System, shaping the future of enterprise tech.',
+        expertise: 'Leadership',
+        image: '/team/anand_rathore.jpg'
     },
     {
-        name: 'Sarah Jenkins',
-        role: 'UI/UX Principal',
-        bio: 'Transforming complex data structures into intuitive human experiences.',
-        expertise: 'Interface',
+        name: 'Shikha Rathore',
+        role: 'HR and Operations / Finance Head',
+        bio: 'Streamlining operational efficiency and managing financial strategy.',
+        expertise: 'Operations',
+        image: '/team/shikha_rathore.jpg',
+        imagePosition: 'center 20%'
     },
     {
-        name: 'David Chen',
-        role: 'Cloud Operations',
-        bio: 'Master of the infinite scale and global infrastructure orchestration.',
-        expertise: 'DevOps',
+        name: 'Mohit Dadhich',
+        role: 'CO Founder / CTO',
+        bio: 'Architecting cutting-edge technical solutions and driving innovation.',
+        expertise: 'Technology',
     },
     {
-        name: 'Aiden Brooks',
-        role: 'Lead Developer',
-        bio: 'Translating high-level logic into resilient, bulletproof machine code.',
-        expertise: 'Execution',
+        name: 'Ujjwal Mehta',
+        role: 'Lead Technical Architect',
+        bio: 'Designing resilient, high-performance systems for complex enterprise needs.',
+        expertise: 'Architecture',
+        image: '/team/ujjwal_mehta.jpg'
     },
     {
-        name: 'Isabella Ross',
-        role: 'Data Scientist',
-        bio: 'Uncovering the digital genome through advanced AI and neural modeling.',
-        expertise: 'Intelligence',
+        name: 'Kritika Arya',
+        role: 'HR and Operations Manager',
+        bio: 'Fostering a productive work environment and optimizing internal processes.',
+        expertise: 'Management',
+        image: '/team/kritika_arya.jpg'
     }
 ];
 
@@ -91,10 +97,24 @@ export default function OurTeam() {
                             >
                                 {/* Visual Header */}
                                 <div className="h-64 bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex flex-col items-center justify-center relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=800')] opacity-10 mix-blend-overlay bg-cover bg-center group-hover:scale-110 transition-transform duration-700" />
-                                    <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center relative z-10 group-hover:-translate-y-2 transition-transform duration-500">
-                                        <User size={40} className="text-white/80" />
-                                    </div>
+                                    {member.image ? (
+                                        <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700">
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover opacity-60 mix-blend-luminosity hover:opacity-100 transition-opacity duration-500"
+                                                style={{ objectPosition: member.imagePosition || 'center center' }}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+                                        </div>
+                                    ) : (
+                                        <>
+                                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=800')] opacity-10 mix-blend-overlay bg-cover bg-center group-hover:scale-110 transition-transform duration-700" />
+                                            <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center relative z-10 group-hover:-translate-y-2 transition-transform duration-500">
+                                                <User size={40} className="text-white/80" />
+                                            </div>
+                                        </>
+                                    )}
                                     <div className="absolute top-6 left-6 z-10">
                                         <span className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest text-blue-400">
                                             {member.expertise}

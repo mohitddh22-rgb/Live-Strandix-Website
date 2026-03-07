@@ -17,16 +17,20 @@ const navItems = [
         hasMegaMenu: true,
         megaMenu: [
             {
-                title: "Mobile App Development",
+                title: "Web Solutions and CRM",
                 items: ["Android Development", "iOS Development", "React Native", "Flutter"]
             },
             {
-                title: "Web Development",
+                title: "AI and IOT Solutions",
                 items: ["Python", "PHP", "Ruby On Rails", "NodeJS", "ReactJS", "MEAN Stack", "MERN Stack", "AngularJS"]
             },
             {
-                title: "Specialized Services",
+                title: "Fintech",
                 items: ["Blockchain Development", "iGaming Services", "Salesforce Development"]
+            },
+            {
+                title: "SaaS Solutions",
+                items: ["CRM/ERP Software", "Collaboration Tools", "Project Management"]
             }
         ]
     },

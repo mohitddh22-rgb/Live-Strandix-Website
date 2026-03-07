@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, Smartphone, Cpu, Workflow, CheckCircle2 } from "lucide-react";
+import { Monitor, Smartphone, Cpu, Workflow, CheckCircle2, Cloud } from "lucide-react";
 
 const services = [
     {
         icon: Monitor,
-        name: "WEB DEVELOPMENT",
-        title: "Expert Web Development Services",
+        name: "AI AND IOT SOLUTIONS",
+        title: "AI and IOT Development Services",
         features: [
             {
                 name: "Custom Web Applications",
                 desc: "We offer one of the best Web Development services in numerous countries, tailoring solutions to business needs."
             },
             {
-                name: "Enterprise Solutions",
+                name: "Custom Solutions",
                 desc: "Scalable and secure web architecture built with modern cloud-first technologies."
             },
             {
@@ -25,8 +25,8 @@ const services = [
     },
     {
         icon: Smartphone,
-        name: "MOBILE APP DEVELOPMENT",
-        title: "Professional Android & iOS Developers",
+        name: "WEB SOLUTIONS AND CRM",
+        title: "Web Solutions and CRM Development",
         features: [
             {
                 name: "Native & Cross-Platform",
@@ -44,20 +44,39 @@ const services = [
     },
     {
         icon: Cpu,
-        name: "AI & IOT SOLUTIONS",
-        title: "AI Development & Integration",
+        name: "FINTECH",
+        title: "Fintech Solutions",
         features: [
             {
                 name: "AI-Powered Automation",
                 desc: "Develop and integrate AI solutions to automate processes, drive insights, and enhance user experience."
             },
             {
-                name: "Smart IoT Solutions",
+                name: "SAAS Compliance",
                 desc: "We build smart IoT solutions that connect devices, collect data, and enable intelligent automation."
             },
             {
                 name: "Predictive Analytics",
                 desc: "Harness the power of data to stay ahead of the competition with AI-driven insights."
+            }
+        ]
+    },
+    {
+        icon: Cloud,
+        name: "SAAS SOFTWARE SOLUTIONS",
+        title: "SAAS Software Development",
+        features: [
+            {
+                name: "Business Operations And Management (CRM/ERP)",
+                desc: "SaaS is widely used to run core business function such as Customer Relationship Management (CRM) to track sales, and Resource Planning (ERP) to manage finance, accounting, and supply chains."
+            },
+            {
+                name: "Collaboration And Communication Tools",
+                desc: "SaaS enables distributed teams to work together in real-time through applications like Slack for messaging, Zoom for video conferencing, and Google Workspace or Microsoft 365 for document editing and sharing."
+            },
+            {
+                name: "Scalable Content And Project Management",
+                desc: "Companies use SaaS for marketing, human resources, and project management to easily manage, scale, and update projects without managing the underlying hardware or software updates."
             }
         ]
     }

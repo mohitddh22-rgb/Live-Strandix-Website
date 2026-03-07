@@ -6,19 +6,16 @@ import Footer from "@/components/Footer";
 import { Trophy, Users, Clock, Smile, Award, ChevronRight, Play } from "lucide-react";
 
 const stats = [
-    { label: "Team Members", value: "350+", icon: Users },
-    { label: "Products Delivered", value: "150+", icon: Trophy },
-    { label: "Years on Market", value: "07", icon: Clock },
+    { label: "Team Members", value: "20+", icon: Users },
+    { label: "Products Delivered", value: "50+", icon: Trophy },
+    { label: "Years on Market", value: "02", icon: Clock },
     { label: "Client Satisfaction", value: "99%", icon: Smile },
-    { label: "Awards & Certs", value: "60+", icon: Award },
 ];
 
 const timeline = [
-    { year: "2018", event: "Foundation of Thoughtwin with a vision to innovate." },
-    { year: "2020", event: "Expanded global operations and scaled the team to 100+." },
-    { year: "2022", event: "Achieved CMMI Level 3 certification for quality excellence." },
-    { year: "2024", event: "Recognized as a top AI & Software development partner." },
-    { year: "2025", event: "Leading digital transformation with cutting-edge AI solutions." },
+    { year: "2023", event: "Foundation of Strandix System with a vision to innovate." },
+    { year: "2024", event: "Expanded operations and specialized in AI-driven solutions." },
+    { year: "2025", event: "Leading digital transformation for startups and SMEs globally." },
 ];
 
 export default function AboutUs() {
@@ -99,7 +96,7 @@ export default function AboutUs() {
             {/* Stats Section */}
             <section className="py-24 px-6 border-y border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
                         {stats.map((stat, i) => (
                             <motion.div
                                 key={stat.label}
@@ -128,7 +125,7 @@ export default function AboutUs() {
                         <h2 className="text-3xl md:text-5xl font-bold">Years of Innovation</h2>
                     </div>
 
-                    <div className="grid md:grid-cols-5 gap-8">
+                    <div className="grid md:grid-cols-3 gap-8">
                         {timeline.map((item, i) => (
                             <motion.div
                                 key={item.year}
@@ -138,7 +135,7 @@ export default function AboutUs() {
                                 transition={{ delay: i * 0.1 }}
                                 className="p-8 bg-white/[0.02] border border-white/[0.06] rounded-3xl hover:bg-white/[0.04] transition-all relative group"
                             >
-                                <div className="text-4xl font-black text-blue-600/20 mb-4 group-hover:text-blue-600/40 transition-colors">{item.year}</div>
+                                <div className="text-4xl font-black text-blue-600 mb-4 group-hover:text-blue-400 transition-colors uppercase tracking-tighter opacity-100">{item.year}</div>
                                 <p className="text-slate-400 text-sm leading-relaxed">{item.event}</p>
                                 <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden md:block opacity-20 group-last:hidden">
                                     <ChevronRight size={24} />

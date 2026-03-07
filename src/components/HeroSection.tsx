@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 const slides = [
     {
         title: "Software Development Company in India",
-        description: "Partner with Strandix System, your trusted expert web and mobile app developers in the USA, UK, and Singapore. We deliver cutting-edge digital solutions.",
+        description: "Partner with Strandix System, your trusted expert web and mobile app developers. We deliver cutting-edge digital solutions.",
         cta: "Request an Estimation",
         bg: "bg-blue-900/20",
         gradient: "from-blue-600/40 via-transparent to-transparent"

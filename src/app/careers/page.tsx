@@ -37,14 +37,7 @@ export default function Careers() {
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 text-sm font-bold tracking-widest uppercase mb-8"
-                    >
-                        Current Openings
-                    </motion.div>
+
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -156,7 +149,7 @@ export default function Careers() {
                             We are always on the lookout for great talent. Send your details and we will keep you in mind for future openings.
                         </p>
                         <a
-                            href="mailto:hr@strandixsystem.com"
+                            href="mailto:info@strandixsystem.com"
                             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-slate-200 transition-colors"
                         >
                             Send your resume

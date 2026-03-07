@@ -1,13 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Twitter, Linkedin, ArrowRight, Instagram } from "lucide-react";
+import { Github, Youtube, Linkedin, ArrowRight, Instagram, Loader2 } from "lucide-react";
+import { useState } from "react";
+import { sendEstimateRequest } from "@/app/actions";
 
 export default function Footer() {
+    const [estimateEmail, setEstimateEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [message, setMessage] = useState("");
+
+    const handleEstimateSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!estimateEmail) return;
+
+        setStatus("loading");
+        try {
+            const result = await sendEstimateRequest(estimateEmail);
+            if (result.success) {
+                setStatus("success");
+                setMessage("Thank you! We'll be in touch soon.");
+                setEstimateEmail("");
+            } else {
+                setStatus("error");
+                setMessage(result.message);
+            }
+        } catch (error) {
+            setStatus("error");
+            setMessage("Something went wrong. Please try again.");
+        }
+    };
+
     const columns = [
         {
             title: "Solutions",
-            links: ["Web Development", "Mobile Development", "AI Integration", "IoT Development"]
+            links: ["Fintech", "SAAS Compliance", "AI and IOT Solutions", "Web Solutions and CRM"]
         },
         {
             title: "Company",
@@ -19,7 +46,7 @@ export default function Footer() {
         },
         {
             title: "Locations",
-            links: ["India (HQ)", "USA Office", "UK Office", "Singapore Office"]
+            links: ["India (Indore)", "UAE / Coming Soon"]
         }
     ];
 
@@ -36,13 +63,13 @@ export default function Footer() {
                             Strandix System your trusted expert web and mobile app developers helping businesses innovate and scale.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all text-white">
-                                <Twitter size={18} />
+                            <Link href="https://youtube.com/@strandixsystem" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all text-white">
+                                <Youtube size={18} />
                             </Link>
                             <Link href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all text-white">
                                 <Linkedin size={18} />
                             </Link>
-                            <Link href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all text-white">
+                            <Link href="https://instagram.com/strandixsystem" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all text-white">
                                 <Instagram size={18} />
                             </Link>
                         </div>
@@ -65,16 +92,26 @@ export default function Footer() {
 
                     <div className="col-span-2 lg:col-span-1">
                         <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white">Get an Estimate</h4>
-                        <div className="relative group mb-4">
+                        <form onSubmit={handleEstimateSubmit} className="relative group mb-4">
                             <input
                                 type="email"
+                                required
+                                value={estimateEmail}
+                                onChange={(e) => setEstimateEmail(e.target.value)}
                                 placeholder="your@email.com"
-                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors text-white"
+                                className={`w-full bg-white/5 border ${status === 'error' ? 'border-red-500/50' : 'border-white/10'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors text-white`}
+                                disabled={status === "loading" || status === "success"}
                             />
-                            <button className="absolute right-2 top-2 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors text-white">
-                                <ArrowRight size={16} />
+                            <button
+                                type="submit"
+                                disabled={status === "loading" || status === "success"}
+                                className="absolute right-2 top-2 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-500 disabled:bg-blue-800 disabled:cursor-not-allowed transition-colors text-white"
+                            >
+                                {status === "loading" ? <Loader2 size={16} className="animate-spin" /> : <ArrowRight size={16} />}
                             </button>
-                        </div>
+                        </form>
+                        {status === "success" && <p className="text-[10px] text-green-500 font-bold mb-2">{message}</p>}
+                        {status === "error" && <p className="text-[10px] text-red-500 font-bold mb-2">{message}</p>}
                         <p className="text-[10px] text-slate-500">
                             Partner with us for your next digital breakthrough.
                         </p>
@@ -86,8 +123,8 @@ export default function Footer() {
                         <span>&copy; {new Date().getFullYear()} Strandix System. All rights reserved.</span>
                     </div>
                     <div className="flex gap-6 text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-                        <Link href="#" className="hover:text-blue-500 transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-blue-500 transition-colors">Terms of Service</Link>
+                        <Link href="/privacy-policy" className="hover:text-blue-500 transition-colors">Privacy Policy</Link>
+                        <Link href="/terms-of-service" className="hover:text-blue-500 transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

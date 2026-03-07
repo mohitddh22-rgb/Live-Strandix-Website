@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 import { Trophy, CheckCircle, Users, Award, Briefcase, Zap, Globe } from "lucide-react";
 
 const successMarkers = [
-    { name: "150+ Successful Projects", icon: CheckCircle },
-    { name: "60+ Awards & Certifications", icon: Award },
-    { name: "120K+ User Stories Completed", icon: Briefcase },
-    { name: "CMMI Level 3 Certified", icon: Trophy },
+    { name: "50+ Successful Projects", icon: CheckCircle },
+    { name: "80+ User Stories Completed", icon: Briefcase },
     { name: "Global Clients Served", icon: Globe },
     { name: "Expert AI Integration", icon: Zap },
 ];

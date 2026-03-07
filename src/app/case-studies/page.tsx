@@ -8,82 +8,85 @@ import { Search, ArrowRight, Laptop, Smartphone, Cpu, Brain } from "lucide-react
 
 const categories = [
     { id: "all", name: "ALL SOLUTIONS", icon: null },
-    { id: "ai", name: "AI SOLUTIONS", icon: Brain },
-    { id: "iot", name: "IOT SOLUTIONS", icon: Cpu },
-    { id: "web", name: "WEB SOLUTIONS", icon: Laptop },
-    { id: "mobile", name: "MOBILE SOLUTIONS", icon: Smartphone },
+    { id: "ai", name: "FINTECH", icon: Brain },
+    { id: "iot", name: "SAAS COMPLIANCE", icon: Cpu },
+    { id: "web", name: "AI AND IOT SOLUTIONS", icon: Laptop },
+    { id: "mobile", name: "WEB SOLUTIONS AND CRM", icon: Smartphone },
 ];
 
 const projects = [
     {
         id: 1,
         category: "ai",
-        title: "AI-driven Solar Management Platform",
-        description: "An advanced platform leveraging artificial intelligence to optimize solar energy production and management.",
+        title: "VaultPayz",
+        description: "VaultPayz is India's leading digital gold and silver investment platform. You can buy, sell, and store 24K gold and 999 silver starting from just ₹100. Your holdings are stored digitally and can be converted to physical gold/silver anytime.",
         features: [
-            "Real-time energy monitoring",
-            "Predictive maintenance alerts",
-            "AI-based yield optimization",
-            "Comprehensive reporting dashboard"
+            "Buying & Selling",
+            "SIP & Investments",
+            "Physical Delivery",
+            "Account & Security",
+            "Wallet & Payments",
+            "Transfer & Gifting"
         ],
-        image: "https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&q=80&w=800",
-        type: "AI & Energy"
+        image: "/vaultpayz.png",
+        type: "Fintech & Investments",
+        href: "https://vaultpayz.com"
     },
-    {
-        id: 2,
-        category: "ai",
-        title: "Intelligent Ticketing & Event Management",
-        description: "An AI-enhanced system for seamless event organization, ticket sales, and audience engagement.",
-        features: [
-            "Dynamic pricing algorithms",
-            "Fraud detection for tickets",
-            "Automated check-in systems",
-            "Personalized user recommendations"
-        ],
-        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
-        type: "AI & Events"
-    },
+
     {
         id: 3,
         category: "iot",
-        title: "Solar + EV Charging Optimization",
-        description: "Integrating IoT sensors with solar grids and EV charging stations for maximum efficiency.",
+        title: "AuditWise",
+        description: "AuditWise is a role-based audit management platform that unifies your audit lifecycle—from data ingestion to review and approval—with powerful analytics, multi-database connectivity, and seamless team collaboration.",
         features: [
-            "Smart grid integration",
-            "IoT-based load balancing",
-            "Automated charging schedules",
-            "Mobile tracking for EV users"
+            "Role-Based Access Control",
+            "Excel Audit Import",
+            "Multi-Database Connectivity",
+            "Secure Email Delivery",
+            "Approve & Reject Workflow",
+            "Analytics Dashboard",
+            "Reviewer Management",
+            "Enterprise Security"
         ],
-        image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800",
-        type: "IoT & Sustainable Tech"
+        image: "/auditwise.png",
+        type: "SAAS Compliance",
+        href: "https://www.auditwise.in"
     },
     {
         id: 4,
         category: "web",
-        title: "Secure Fintech Payments Platform",
-        description: "A high-security web platform for global payments, lending, and financial management.",
+        title: "iloveuiux",
+        description: "Run an instant UX audit that shows revenue loss, money at stake, and how much you can recover.",
         features: [
-            "Multi-factor authentication",
-            "Real-time transaction processing",
-            "Compliance (PCI-DSS) ready",
-            "API integration for merchants"
+            "UX Score (0-100)",
+            "Revenue Loss Estimate",
+            "Money at Stake",
+            "Recovery Potential",
+            "Industry Position",
+            "Top 5 Problems Costing Money",
+            "Executive Verdict",
+            "Fix Plan & Priority"
         ],
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
-        type: "Web & Fintech"
+        image: "/iloveuiux.png",
+        type: "AI and IOT Solutions",
+        href: "https://iloveuiux.com"
     },
     {
         id: 5,
         category: "mobile",
-        title: "Personalized Health & Wellness App",
-        description: "A comprehensive mobile solution connecting users with fitness tracking and health professionals.",
+        title: "Aeternis",
+        description: "Aeternis is a powerful, cloud-based system designed from the ground up to be incredibly easy to use. Focus on your hospitality while our secure and reliable platform handles the rest. With real-time updates synced instantly across all your devices, Aeternis radically streamlines your operations, helping you save time and money every single day.",
         features: [
-            "Wearable device syncing",
-            "Real-time health telemetry",
-            "AI nutrition coach",
-            "In-app professional consultations"
+            "Easy to Use",
+            "Secure & Reliable",
+            "Cloud-Based",
+            "Real-time Updates",
+            "Saves Time & Money",
+            "Works on Any Device"
         ],
-        image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&q=80&w=800",
-        type: "Mobile & Health"
+        image: "/aeternis.png",
+        type: "Web Solutions and CRM",
+        href: "https://www.aeternis.in"
     }
 ];
 
@@ -118,7 +121,7 @@ export default function CaseStudies() {
                         transition={{ delay: 0.1 }}
                         className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
                     >
-                        Explore how we deliver scalable web, mobile, and IoT solutions for global enterprises.
+                        Explore how we deliver scalable Fintech, SAAS Compliance, AI and IOT Solutions, and Web Solutions and CRM.
                     </motion.p>
                 </div>
             </section>
@@ -132,8 +135,8 @@ export default function CaseStudies() {
                                 key={cat.id}
                                 onClick={() => setActiveTab(cat.id)}
                                 className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all border ${activeTab === cat.id
-                                        ? "bg-blue-600 border-blue-600 text-white"
-                                        : "bg-white/5 border-white/10 text-slate-400 hover:bg-white/10"
+                                    ? "bg-blue-600 border-blue-600 text-white"
+                                    : "bg-white/5 border-white/10 text-slate-400 hover:bg-white/10"
                                     } flex items-center gap-2`}
                             >
                                 {cat.icon && <cat.icon size={14} />}
@@ -189,10 +192,22 @@ export default function CaseStudies() {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-xl font-bold hover:bg-slate-200 transition-all group">
-                                        View Case Study
-                                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                                    </button>
+                                    {project.href ? (
+                                        <a
+                                            href={project.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-xl font-bold hover:bg-slate-200 transition-all group w-fit"
+                                        >
+                                            View Case Study
+                                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                        </a>
+                                    ) : (
+                                        <button className="flex items-center gap-3 px-8 py-3 bg-white text-black rounded-xl font-bold hover:bg-slate-200 transition-all group">
+                                            View Case Study
+                                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                        </button>
+                                    )}
                                 </div>
 
                                 <div className={`relative aspect-[4/3] rounded-[40px] overflow-hidden bg-slate-900 shadow-2xl group ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
