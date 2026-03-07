@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20">
                     <div className="col-span-2 lg:col-span-1">
-                        <Link href="/" className="flex items-center gap-2 mb-8 text-white uppercase font-bold text-xl tracking-tight">
+                        <Link href="/" className="flex items-center gap-2 mb-8 text-white uppercase font-bold text-xl tracking-tight font-[family-name:var(--font-space-grotesk)]">
                             <img src="/logo.png" alt="Strandix System" className="h-10 w-auto" />
                             STRANDIX SYSTEM
                         </Link>

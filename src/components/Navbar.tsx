@@ -64,7 +64,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
                     <img src="/logo.png" alt="Strandix System" className="h-10 w-auto" />
-                    <span className="font-bold text-xl tracking-tight text-white uppercase">STRANDIX SYSTEM</span>
+                    <span className="font-bold text-xl tracking-tight text-white uppercase font-[family-name:var(--font-space-grotesk)]">STRANDIX SYSTEM</span>
                 </Link>
 
                 {/* Desktop Nav */}
