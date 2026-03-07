@@ -3,32 +3,18 @@
 import Link from "next/link";
 import { Github, Youtube, Linkedin, ArrowRight, Instagram, Loader2 } from "lucide-react";
 import { useState } from "react";
-import { sendEstimateRequest } from "@/app/actions";
 
 export default function Footer() {
     const [estimateEmail, setEstimateEmail] = useState("");
-    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-    const [message, setMessage] = useState("");
 
-    const handleEstimateSubmit = async (e: React.FormEvent) => {
+    const handleEstimateSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!estimateEmail) return;
 
-        setStatus("loading");
-        try {
-            const result = await sendEstimateRequest(estimateEmail);
-            if (result.success) {
-                setStatus("success");
-                setMessage("Thank you! We'll be in touch soon.");
-                setEstimateEmail("");
-            } else {
-                setStatus("error");
-                setMessage(result.message);
-            }
-        } catch (error) {
-            setStatus("error");
-            setMessage("Something went wrong. Please try again.");
-        }
+        // Since we are deploying statically to GitHub Pages, we cannot use Server Actions.
+        // Fallback to standard mailto link behavior.
+        window.location.href = `mailto:info@strandixsystem.com?subject=New Estimate Request&body=Estimate request for: ${estimateEmail}`;
+        setEstimateEmail("");
     };
 
     const columns = [
@@ -99,19 +85,15 @@ export default function Footer() {
                                 value={estimateEmail}
                                 onChange={(e) => setEstimateEmail(e.target.value)}
                                 placeholder="your@email.com"
-                                className={`w-full bg-white/5 border ${status === 'error' ? 'border-red-500/50' : 'border-white/10'} rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors text-white`}
-                                disabled={status === "loading" || status === "success"}
+                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-colors text-white"
                             />
                             <button
                                 type="submit"
-                                disabled={status === "loading" || status === "success"}
-                                className="absolute right-2 top-2 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-500 disabled:bg-blue-800 disabled:cursor-not-allowed transition-colors text-white"
+                                className="absolute right-2 top-2 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors text-white"
                             >
-                                {status === "loading" ? <Loader2 size={16} className="animate-spin" /> : <ArrowRight size={16} />}
+                                <ArrowRight size={16} />
                             </button>
                         </form>
-                        {status === "success" && <p className="text-[10px] text-green-500 font-bold mb-2">{message}</p>}
-                        {status === "error" && <p className="text-[10px] text-red-500 font-bold mb-2">{message}</p>}
                         <p className="text-[10px] text-slate-500">
                             Partner with us for your next digital breakthrough.
                         </p>

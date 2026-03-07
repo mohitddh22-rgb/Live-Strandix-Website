@@ -3,10 +3,9 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowRight, MapPin, Phone, Mail, ChevronDown, Loader2, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail, ChevronDown, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { sendContactRequest } from "@/app/actions";
 
 const locations = [
     {
@@ -35,23 +34,22 @@ export default function ContactUs() {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [formMessage, setFormMessage] = useState("");
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("loading");
 
-        try {
-            const result = await sendContactRequest(formData);
-            if (result.success) {
-                setStatus("success");
-                setFormMessage("Thank you! Your message has been sent successfully.");
-            } else {
-                setStatus("error");
-                setFormMessage(result.message);
-            }
-        } catch (error) {
-            setStatus("error");
-            setFormMessage("Something went wrong. Please try again.");
-        }
+        // Construct email body from form data
+        const subject = `New Contact Inquiry: ${formData.interest}`;
+        const body = `
+Interest: ${formData.interest}
+Budget: ${formData.budget}
+Industry: ${formData.industry}
+Message: ${formData.message || "No message provided"}
+        `.trim();
+
+        // Use mailto link for static export compatibility
+        window.location.href = `mailto:info@strandixsystem.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        setStatus("success");
     };
 
     return (
@@ -195,11 +193,7 @@ export default function ContactUs() {
                                         disabled={status === "loading"}
                                         className="w-full md:w-auto px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-2 disabled:bg-slate-400"
                                     >
-                                        {status === "loading" ? (
-                                            <>Processing... <Loader2 size={20} className="animate-spin" /></>
-                                        ) : (
-                                            <>Send Message <ArrowRight size={20} /></>
-                                        )}
+                                        Send Message <ArrowRight size={20} />
                                     </button>
                                 </div>
                             </form>
