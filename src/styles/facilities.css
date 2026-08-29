@@ -1,0 +1,113 @@
+/* ==========================================================================
+   BLOCK: FACILITIES & CASE STUDIES (MATCHING SECTION 2 BOX & BORDER)
+   ========================================================================== */
+
+.block-facilities {
+  padding: 8rem 0 6rem;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.block-facilities__header {
+  margin-bottom: 4rem;
+}
+
+.block-facilities__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .block-facilities__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card Container - Exact Same Crisp White Box Style as Section 2 */
+.block-facilities__item {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.block-facilities__item:hover,
+.block-facilities__item.-active {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(37, 99, 235, 0.4);
+  transform: translateY(-4px);
+}
+
+.block-facilities__item-media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(248, 250, 252, 0.9) 100%);
+  border-bottom: 1px solid var(--color-stroke);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-facilities__item-media-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  padding: 0.35rem 0.875rem;
+  background: #ffffff;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-blue-600);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 2;
+  border: 1px solid var(--color-stroke);
+  box-shadow: var(--shadow-sm);
+}
+
+.block-facilities__item-content {
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.block-facilities__item-heading {
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-base);
+  margin-bottom: 0.875rem;
+}
+
+.block-facilities__item-text {
+  font-size: 1.02rem;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.block-facilities__item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.block-facilities__item-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-blue-600);
+  font-weight: 500;
+}

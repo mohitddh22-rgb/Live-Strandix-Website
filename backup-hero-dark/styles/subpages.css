@@ -1,0 +1,249 @@
+/* ==========================================================================
+   SUBPAGES: DEDICATED SECTIONS / VIEWS (MATCHING SECTION 2 BOX & BORDER)
+   ========================================================================== */
+
+.subpage-view {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 1500;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  padding: 6rem 0 4rem;
+}
+
+.subpage-view.-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.subpage-hero {
+  background: var(--color-navy-900);
+  color: var(--color-white);
+  padding: 5rem 0 4rem;
+  margin-top: -6rem;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.subpage-hero .container-huge {
+  position: relative;
+  z-index: 2;
+}
+
+.subpage-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-cyan-400);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.subpage-back-btn:hover {
+  color: var(--color-white);
+}
+
+.subpage-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 0.875rem;
+}
+
+.subpage-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* Team Grid (6 Leaders) - Matching Section 2 Box Style */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.team-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.team-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 0.875rem;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-stroke);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-600);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.team-department {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 0.35rem;
+}
+
+.team-name {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-base);
+  margin-bottom: 0.25rem;
+}
+
+.team-role {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-gray-500);
+  margin-bottom: 1rem;
+}
+
+.team-bio {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-gray-600);
+}
+
+/* Case Studies Grid - Matching Section 2 Box Style */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.case-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.case-banner {
+  height: 160px;
+  background: var(--color-surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--color-base);
+  font-size: 1.75rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-stroke);
+}
+
+.case-body {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.case-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 0.5rem;
+}
+
+.case-title {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--color-base);
+  margin-bottom: 0.75rem;
+}
+
+.case-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+  margin-bottom: 1.75rem;
+}
+
+/* Careers Perks Grid - Matching Section 2 Box Style */
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.perk-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--color-stroke);
+  box-shadow: var(--shadow-lg);
+}
+
+.perk-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  background: var(--color-blue-600);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.perk-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-base);
+  margin-bottom: 0.35rem;
+}
+
+.perk-desc {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-gray-600);
+}

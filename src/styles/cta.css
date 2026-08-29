@@ -1,0 +1,92 @@
+/* ==========================================================================
+   BLOCK: CTA (MATCHING SECTION 2 CRISP WHITE BOX & BORDER DESIGN)
+   ========================================================================== */
+
+.block-cta {
+  padding: 6rem 0 8rem;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+/* Card Container - Exact Same Crisp White Box Style as Section 2 (#why-us) */
+.block-cta__card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 4.5rem 3rem;
+  color: var(--color-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .block-cta__card {
+    padding: 5.5rem 4.5rem;
+  }
+}
+
+.block-cta__card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.block-cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-stroke);
+  color: var(--color-blue-600);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.block-cta__title {
+  font-size: clamp(2.2rem, 3.8vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--color-base);
+  max-width: 850px;
+  margin-bottom: 1.25rem;
+}
+
+.block-cta__description {
+  font-size: 1.1rem;
+  color: var(--color-gray-600);
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 2.75rem;
+}
+
+.block-cta__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.block-cta__buttons .btn-secondary,
+.block-cta__buttons .wp-block-button:not(.is-style-gradient) .wp-block-button__link {
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-stroke);
+  color: var(--color-base);
+}
+
+.block-cta__buttons .wp-block-button:not(.is-style-gradient) .wp-block-button__link:hover {
+  background: #ffffff;
+  border-color: var(--color-blue-600);
+  color: var(--color-blue-600);
+  transform: translateY(-2px);
+}

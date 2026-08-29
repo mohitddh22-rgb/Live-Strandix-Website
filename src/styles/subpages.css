@@ -1,0 +1,351 @@
+/* ==========================================================================
+   SUBPAGES: DEDICATED SECTIONS / VIEWS (HARMONIOUS WHITE & ROYAL BLUE)
+   ========================================================================== */
+
+.subpage-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  background-color: var(--color-surface-light);
+  z-index: 1500;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  padding: 0 0 8rem;
+}
+
+.subpage-view.-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Custom Sleek Scrollbar for Subpages */
+.subpage-view::-webkit-scrollbar {
+  width: 8px;
+}
+.subpage-view::-webkit-scrollbar-track {
+  background: var(--color-surface-light);
+}
+.subpage-view::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+  border-radius: 10px;
+}
+.subpage-view::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue-600);
+}
+
+/* Subpage Sticky Top Navigation */
+.subpage-nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-stroke);
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.subpage-nav-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subpage-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--color-blue-600);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  padding: 0.5rem 1.125rem;
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.subpage-back-btn:hover {
+  background: var(--color-blue-600);
+  border-color: var(--color-blue-600);
+  color: #ffffff;
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Subpage Clean Header Banner */
+.subpage-hero {
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-stroke);
+  color: var(--color-base);
+  padding: 4.5rem 0 3.5rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.subpage-hero .container-huge {
+  position: relative;
+  z-index: 2;
+}
+
+.subpage-hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.subpage-title {
+  font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--color-base);
+  margin-bottom: 1rem;
+}
+
+.subpage-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-gray-600);
+  max-width: 720px;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   1. TEAM GRID (LEADERSHIP & ARCHITECTS)
+   ========================================================================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.team-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-blue-600);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 0.875rem;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-600);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.team-department {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 0.35rem;
+}
+
+.team-name {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-base);
+  margin-bottom: 0.25rem;
+}
+
+.team-role {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-gray-500);
+  margin-bottom: 1.25rem;
+}
+
+.team-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+/* ==========================================================================
+   2. CASE STUDIES GRID
+   ========================================================================== */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.case-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-blue-600);
+  box-shadow: var(--shadow-xl);
+}
+
+.case-banner {
+  height: 140px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(248, 250, 252, 0.9) 100%);
+  border-bottom: 1px solid var(--color-stroke);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-blue-600);
+}
+
+.case-body {
+  padding: 2.25rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.case-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 0.5rem;
+}
+
+.case-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-base);
+  margin-bottom: 0.875rem;
+}
+
+.case-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+.case-body .wp-block-button__link {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   3. CAREERS & CULTURE PERKS
+   ========================================================================== */
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.perk-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.perk-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-blue-600);
+  box-shadow: var(--shadow-lg);
+}
+
+.perk-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-600);
+  margin-bottom: 1.5rem;
+}
+
+.perk-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-base);
+  margin-bottom: 0.5rem;
+}
+
+.perk-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+/* Subpage Callout Cards */
+.subpage-callout-card {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.5rem;
+  padding: 4rem 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}

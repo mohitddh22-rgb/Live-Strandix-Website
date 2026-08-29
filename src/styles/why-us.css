@@ -1,0 +1,179 @@
+/* ==========================================================================
+   BLOCK: WHY US (VIDEO SCRUBBING & RIGHT-ALIGNED NARRATIVE)
+   ========================================================================== */
+
+.block-why-us {
+  position: relative;
+  min-height: 300vh;
+  background-color: var(--color-surface-light);
+  color: var(--color-base);
+}
+
+.block-why-us__sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Video for Scrubbing (Center/Left focused) */
+.block-why-us__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.block-why-us__video-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+  opacity: 0.85;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+.block-why-us__video-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(248, 250, 252, 0.95) 0%, rgba(248, 250, 252, 0.7) 40%, rgba(248, 250, 252, 0.1) 80%);
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .block-why-us__video-overlay {
+    background: rgba(248, 250, 252, 0.85);
+  }
+}
+
+/* Top Progress Bar */
+.block-why-us__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(15, 23, 42, 0.08);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.block-why-us__progress.-active {
+  opacity: 1;
+}
+
+.block-why-us__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-blue-600);
+  transition: width 0.05s linear;
+}
+
+/* Content Container (Right-aligned) */
+.block-why-us__wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .block-why-us__wrapper {
+    padding: 0 4rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.block-why-us__items {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  min-height: 420px;
+}
+
+.block-why-us__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+  pointer-events: none;
+}
+
+.block-why-us__item.-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Crisp Architectural Box (NO AI Neon Border) */
+.block-why-us__box {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.block-why-us__box-label {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 1.25rem;
+}
+
+.block-why-us__box-heading {
+  font-size: clamp(1.85rem, 2.5vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-base);
+  margin-bottom: 1.5rem;
+}
+
+.block-why-us__box-heading span {
+  display: inline-block;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.block-why-us__box-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+.block-why-us__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.block-why-us__metric-val {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-blue-600);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.block-why-us__metric-label {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}

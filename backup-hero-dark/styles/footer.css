@@ -1,0 +1,199 @@
+/* ==========================================================================
+   BLOCK: FOOTER (HARMONIOUS LIGHT SLATE & ROYAL BLUE DESIGN)
+   ========================================================================== */
+
+.block-footer {
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-base);
+  padding: 2rem 0 3rem;
+  overflow: hidden;
+}
+
+.block-footer__inner {
+  position: relative;
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.5rem;
+  padding: 4.5rem 3rem 2.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 992px) {
+  .block-footer__inner {
+    padding: 5rem 4.5rem 3rem;
+  }
+}
+
+/* Atmospheric Ambient Video (Blended naturally with light background) */
+.block-footer__video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+  opacity: 0.28;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.block-footer__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.block-footer__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--color-surface-light) 0%, rgba(248, 250, 252, 0.7) 40%, rgba(248, 250, 252, 0.2) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.block-footer__content {
+  position: relative;
+  z-index: 3;
+}
+
+.block-footer__main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--color-stroke);
+}
+
+@media (min-width: 992px) {
+  .block-footer__main {
+    grid-template-columns: 1.3fr 2.5fr;
+    gap: 5rem;
+  }
+}
+
+.block-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.block-footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-base);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.block-footer__logo svg {
+  height: 28px;
+  width: auto;
+  stroke: var(--color-blue-600);
+}
+
+.block-footer__brand-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-gray-600);
+  margin-bottom: 2rem;
+  max-width: 380px;
+}
+
+.block-footer__contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+}
+
+.block-footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+.block-footer__contact-item svg {
+  stroke: var(--color-blue-600);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.block-footer__contact-item span {
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
+.block-footer__navs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .block-footer__navs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.block-footer__nav-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 1.25rem;
+}
+
+.block-footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.block-footer__nav-list a {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.block-footer__nav-list a:hover {
+  color: var(--color-blue-600);
+  transform: translateX(4px);
+}
+
+/* Bottom Bar */
+.block-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+@media (min-width: 768px) {
+  .block-footer__bottom {
+    flex-direction: row;
+  }
+}
+
+.block-footer__legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.block-footer__legal a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+.block-footer__legal a:hover {
+  color: var(--color-blue-600);
+}

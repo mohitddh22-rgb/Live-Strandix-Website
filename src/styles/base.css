@@ -1,0 +1,383 @@
+/* ==========================================================================
+   STRANDIX SYSTEM DESIGN SYSTEM (BASE & TOKENS - NOHEMI TYPEFACE)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nohemi';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/assets/fonts/nohemi/Nohemi-Black.ttf') format('truetype');
+}
+
+:root {
+  --font-main: 'Nohemi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Refined Strandix Color Palette (White, Royal Blue & Deep Navy) */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-base: #0B132B;          /* Deep corporate navy */
+  --color-navy-900: #060B1E;      /* Hero & Footer deep canvas */
+  --color-blue-700: #1D4ED8;      /* Royal blue */
+  --color-blue-600: #2563EB;      /* Strandix primary brand blue */
+  --color-blue-500: #3B82F6;      /* Electric accent blue */
+  --color-cyan-400: #38BDF8;      /* Sky cyan highlight */
+  --color-yellow-400: #FCD34D;    /* Vibrant accent for rolling words */
+  
+  --color-surface-light: #F8FAFC; /* Clean slate background */
+  --color-surface-card: #FFFFFF;  /* Pure white card surface */
+  --color-surface-hover: #F1F5F9;
+  
+  --color-gray-900: #0F172A;
+  --color-gray-800: #1E293B;
+  --color-gray-600: #475569;
+  --color-gray-500: #64748B;
+  --color-gray-400: #94A3B8;
+  --color-gray-200: #E2E8F0;
+  --color-gray-100: #F1F5F9;
+  
+  /* Crisp Architectural Borders (NO AI-generated neon glow) */
+  --color-stroke: #E2E8F0;
+  --color-stroke-subtle: rgba(15, 23, 42, 0.07);
+  --color-stroke-dark: rgba(255, 255, 255, 0.12);
+  --color-stroke-blue: rgba(37, 99, 235, 0.2);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  --gradient-blue-cyan: linear-gradient(135deg, #38BDF8 0%, #2563EB 100%);
+  --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+
+  /* Transitions */
+  --default-transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --smooth-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Subtle Real-World Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  --shadow-lg: 0 16px 40px -6px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-gray-600);
+  font-family: var(--font-main);
+  font-weight: 300;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Lenis Smooth Scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Containers */
+.container-huge {
+  width: 100%;
+  max-width: 1680px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 992px) {
+  .container-huge {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.container-full {
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 992px) {
+  .container-full {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.container-medium {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  color: var(--color-base);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--default-transition);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Clean Architectural Buttons */
+.wp-block-button {
+  display: inline-block;
+}
+
+.wp-block-button__link, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 0.875rem;
+  font-family: var(--font-main);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--default-transition);
+  background-color: var(--color-white);
+  color: var(--color-base);
+  border: 1px solid var(--color-stroke);
+}
+
+.wp-block-button.is-style-gradient .wp-block-button__link,
+.btn-gradient {
+  background: var(--gradient-brand);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+.wp-block-button.is-style-gradient .wp-block-button__link:hover,
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.wp-block-button.is-style-symbol .wp-block-button__link::after,
+.btn-symbol::after {
+  content: '';
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M1 11L11 1M11 1H3M11 1V9' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform var(--default-transition);
+}
+.wp-block-button.is-style-symbol:hover .wp-block-button__link::after,
+.btn-symbol:hover::after {
+  transform: translate(2px, -2px);
+}
+
+.wp-block-button.is-style-blur .wp-block-button__link,
+.btn-blur {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.wp-block-button.is-style-blur .wp-block-button__link:hover,
+.btn-blur:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.wp-block-button.is-style-huge .wp-block-button__link {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.05rem;
+  border-radius: 1rem;
+}
+
+.wp-block-button.is-style-primary .wp-block-button__link {
+  background-color: var(--color-base);
+  color: var(--color-white);
+  border: none;
+}
+.wp-block-button.is-style-primary .wp-block-button__link:hover {
+  background-color: var(--color-blue-700);
+  transform: translateY(-2px);
+}
+
+/* Section Header Component */
+.section-header {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+.section-header.-align-left {
+  text-align: left;
+}
+.section-header.-align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+.section-header__badge, .badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.875rem;
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: var(--color-gray-100);
+  color: var(--color-blue-600);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--color-stroke);
+}
+.section-header.-white .section-header__badge {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-cyan-400);
+  border-color: var(--color-stroke-dark);
+}
+.section-header__title {
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-base);
+  margin-bottom: 1rem;
+}
+.section-header.-white .section-header__title {
+  color: var(--color-white);
+}
+.section-header__description {
+  font-size: 1.1rem;
+  color: var(--color-gray-500);
+  max-width: 650px;
+  line-height: 1.6;
+}
+.section-header.-white .section-header__description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Two columns section header layout */
+.section-header.-two-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: flex-end;
+}
+@media (min-width: 992px) {
+  .section-header.-two-columns {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}

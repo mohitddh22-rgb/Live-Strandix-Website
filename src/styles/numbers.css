@@ -1,0 +1,83 @@
+/* ==========================================================================
+   BLOCK: NUMBERS (IMPACT METRICS HORIZONTAL PIN)
+   ========================================================================== */
+
+.block-numbers {
+  padding: 8rem 0 6rem;
+  background-color: var(--color-surface-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.block-numbers__header {
+  margin-bottom: 4rem;
+}
+
+.block-numbers__items-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.block-numbers__items-inner {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 1rem 2rem 2rem;
+}
+
+.block-numbers__item {
+  width: clamp(280px, 28vw, 380px);
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 360px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.block-numbers__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-blue-600);
+}
+
+.block-numbers__item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--color-blue-600);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.block-numbers__item-number {
+  font-size: clamp(3.5rem, 5.5vw, 5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--color-base);
+  margin-bottom: 1rem;
+}
+
+.block-numbers__item-caption {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-base);
+  margin-bottom: 0.5rem;
+}
+
+.block-numbers__item-description {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-gray-500);
+}

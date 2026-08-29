@@ -1,0 +1,271 @@
+/* ==========================================================================
+   BLOCK: HERO SECTION (LIGHT THEME - HARMONIOUS WHITE & ROYAL BLUE)
+   ========================================================================== */
+
+.block-hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-surface-light);
+  color: var(--color-base);
+  padding: 7rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Background Fluid Bio-Strand Video (Blended seamlessly on light canvas) */
+.block-hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.block-hero__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+  filter: contrast(1.15) brightness(1.02);
+}
+
+.block-hero__video-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 50%, rgba(248, 250, 252, 0.15) 0%, rgba(248, 250, 252, 0.75) 60%, var(--color-surface-light) 100%),
+              linear-gradient(to right, var(--color-surface-light) 0%, rgba(248, 250, 252, 0.9) 35%, rgba(248, 250, 252, 0.25) 100%);
+  pointer-events: none;
+}
+
+/* Hero Content */
+.block-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.block-hero__main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 920px;
+}
+
+/* Big Display Headline with NOHEMI Typography */
+.block-hero__heading {
+  font-size: clamp(3rem, 6.2vw, 5.75rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-base);
+  margin-bottom: 2.5rem;
+}
+
+/* Rolling Animated Words */
+.block-hero__heading-words {
+  display: inline-block;
+  height: clamp(3.2rem, 6.5vw, 6rem);
+  overflow: hidden;
+  position: relative;
+  top: clamp(0.4rem, 1vw, 0.9rem);
+  vertical-align: top;
+}
+
+.block-hero__heading-words-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: wordSlider 12s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+.block-hero__heading-word {
+  color: var(--color-blue-600);
+  display: block;
+  line-height: 1.05;
+  height: clamp(3.2rem, 6.5vw, 6rem);
+  font-weight: 600;
+}
+
+@keyframes wordSlider {
+  0%, 18% { transform: translateY(0); }
+  25%, 43% { transform: translateY(-20%); }
+  50%, 68% { transform: translateY(-40%); }
+  75%, 93% { transform: translateY(-60%); }
+  100% { transform: translateY(-80%); }
+}
+
+/* Bottom Bar: Action Buttons & Scroll Indicator */
+.block-hero__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1.5rem;
+}
+
+.block-hero__buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.block-hero__buttons .btn-secondary,
+.block-hero__buttons .wp-block-button:not(.is-style-gradient) .wp-block-button__link {
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  color: var(--color-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.block-hero__buttons .wp-block-button:not(.is-style-gradient) .wp-block-button__link:hover {
+  border-color: var(--color-blue-600);
+  color: var(--color-blue-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.block-hero__scroll-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.block-hero__scroll-text:hover {
+  color: var(--color-blue-600);
+}
+
+.block-hero__scroll-text::after {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563EB' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cpolyline points='19 12 12 19 5 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ==========================================================================
+   HERO PRELOADER (000 - 100% - HARMONIOUS WHITE & ROYAL BLUE)
+   ========================================================================== */
+
+.block-hero__loader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-surface-light);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s;
+}
+
+.block-hero__loader.-loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+.block-hero__loader.-hidden {
+  display: none;
+}
+
+.block-hero__loader-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 50%;
+  box-shadow: 0 20px 45px rgba(11, 19, 43, 0.08);
+}
+
+.block-hero__loader-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.block-hero__loader-circle.-large {
+  width: 360px;
+  height: 360px;
+  border: 1.5px dashed rgba(37, 99, 235, 0.35);
+  animation: rotateClockwise 20s linear infinite;
+}
+
+.block-hero__loader-circle.-small {
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  animation: rotateCounterClockwise 15s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.block-hero__loader-logo {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-hero__loader-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.block-hero__loader-progress {
+  font-family: var(--font-main);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--color-base);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.block-hero__loader-progress-max {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-gray-400);
+}

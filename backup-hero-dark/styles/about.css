@@ -1,0 +1,152 @@
+/* ==========================================================================
+   BLOCK: ABOUT (HORIZONTAL PINNED SHOWCASE - MATCHING SECTION 2 BOX & BORDER)
+   ========================================================================== */
+
+.block-about {
+  background-color: var(--color-surface-light);
+  color: var(--color-base);
+  padding: 8rem 0 6rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.block-about__main-header {
+  margin-bottom: 4rem;
+}
+
+.block-about__horizontal {
+  position: relative;
+  width: 100%;
+}
+
+.block-about__horizontal-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.block-about__horizontal-inner {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  padding: 1rem 2rem 3rem;
+}
+
+/* Horizontal Slides - Exact Same Crisp White Box Style as Section 2 (#why-us) */
+.block-about__slide {
+  width: clamp(340px, 42vw, 560px);
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid var(--color-stroke);
+  border-radius: 1.25rem;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.block-about__slide:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+.block-about__slide-top {
+  margin-bottom: 2rem;
+}
+
+.block-about__slide-step {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-600);
+  margin-bottom: 1.25rem;
+}
+
+.block-about__slide-title {
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  font-weight: 500;
+  color: var(--color-base);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.block-about__slide-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+}
+
+/* Technology Matrix within Slide */
+.block-about__tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.block-about__tech-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.875rem;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-stroke);
+  border-radius: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-base);
+  text-align: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.block-about__tech-pill:hover {
+  background: #ffffff;
+  border-color: var(--color-blue-600);
+  color: var(--color-blue-600);
+}
+
+/* Method Steps */
+.block-about__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1.75rem;
+}
+
+.block-about__step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-stroke);
+  border-radius: 0.875rem;
+  padding: 1rem 1.25rem;
+}
+
+.block-about__step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-blue-600);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.block-about__step-text {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
+.block-about__step-text strong {
+  color: var(--color-base);
+}
