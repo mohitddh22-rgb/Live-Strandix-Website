@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
   new CostCalculator();
   new SubpageRouter();
 
-  // Horizontal Slider for About section (Desktop only)
+  // Horizontal Slider for About section
   const aboutBlock = document.querySelector('.block-about');
-  if (aboutBlock && window.innerWidth >= 992) {
+  if (aboutBlock) {
     new HorizontalSlider(aboutBlock, '.block-about__horizontal-inner');
   }
 

@@ -14,15 +14,6 @@ export class WhyUsScrubber {
   }
 
   init() {
-    if (window.innerWidth < 992) {
-      if (this.video) {
-        this.video.autoplay = true;
-        this.video.loop = true;
-        this.video.play().catch(() => {});
-      }
-      return;
-    }
-
     this.setupSplitText();
     this.setupVideoScrubbing();
     this.setupScrollTriggers();
@@ -49,7 +40,7 @@ export class WhyUsScrubber {
           charSpan.textContent = word[i];
           charSpan.style.opacity = index === 0 ? '1' : '0.22';
           charSpan.style.color = 'var(--color-base)';
-          charSpan.style.transition = 'opacity 0.25s ease, color 0.25s ease';
+          charSpan.style.transition = 'opacity 0.2s ease, color 0.2s ease';
           wordSpan.appendChild(charSpan);
           charSpans.push(charSpan);
         }

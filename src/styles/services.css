@@ -176,16 +176,14 @@
     padding: 3.5rem 0;
   }
   .block-services__panels {
-    gap: 1.5rem;
+    gap: 2rem;
   }
   .block-services__panel {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 4.5rem;
     padding: 2rem 1.5rem;
-    gap: 1.75rem;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
+    gap: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
   .block-services__panel-features {
     grid-template-columns: 1fr;

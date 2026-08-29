@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BLOCK: WHY US (VIDEO SCRUBBING ON DESKTOP & FLUID NARRATIVE ON MOBILE)
+   BLOCK: WHY US (VIDEO SCRUBBING & NARRATIVE ILLUMINATION - DESKTOP & MOBILE)
    ========================================================================== */
 
 .block-why-us {
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-/* Background Video for Scrubbing (Center/Left focused) */
+/* Background Video for Scrubbing */
 .block-why-us__video {
   position: absolute;
   inset: 0;
@@ -69,12 +69,12 @@
   transition: width 0.05s linear;
 }
 
-/* Content Container (Right-aligned) */
+/* Content Container */
 .block-why-us__wrapper {
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
 }
 
 @media (min-width: 992px) {
@@ -89,7 +89,14 @@
   position: relative;
   width: 100%;
   max-width: 560px;
-  min-height: 420px;
+  min-height: 380px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .block-why-us__items {
+    margin: 0;
+  }
 }
 
 .block-why-us__item {
@@ -100,7 +107,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
   pointer-events: none;
 }
 
@@ -116,9 +123,15 @@
   background: #ffffff;
   border: 1px solid var(--color-stroke);
   border-radius: 1.25rem;
-  padding: 2.75rem 2.25rem;
+  padding: 2.25rem 2rem;
   box-shadow: var(--shadow-lg);
   position: relative;
+}
+
+@media (min-width: 992px) {
+  .block-why-us__box {
+    padding: 2.75rem 2.25rem;
+  }
 }
 
 .block-why-us__box-label {
@@ -128,15 +141,15 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-blue-600);
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
 }
 
 .block-why-us__box-heading {
-  font-size: clamp(1.65rem, 2.3vw, 2.15rem);
+  font-size: clamp(1.45rem, 4.5vw, 2.15rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--color-base);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .block-why-us__box-heading span {
@@ -145,26 +158,26 @@
 }
 
 .block-why-us__box-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9375rem;
+  line-height: 1.55;
   color: var(--color-gray-600);
 }
 
 .block-why-us__metrics {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-top: 1.75rem;
-  padding-top: 1.5rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--color-stroke);
 }
 
 .block-why-us__metric-val {
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 700;
   color: var(--color-blue-600);
   line-height: 1;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
 .block-why-us__metric-label {
@@ -172,57 +185,12 @@
   color: var(--color-gray-500);
 }
 
-/* ==========================================================================
-   MOBILE RESPONSIVENESS (FLUID CARD FLOW, ZERO TOUCH-LOCKING)
-   ========================================================================== */
+/* Mobile Polish */
 @media (max-width: 991px) {
   .block-why-us {
-    min-height: auto;
-    padding: 3.5rem 0;
+    min-height: 250vh;
   }
-  
-  .block-why-us__sticky-container {
-    position: relative;
-    height: auto;
-    display: block;
-  }
-  
-  .block-why-us__video {
-    opacity: 0.3;
-  }
-  
   .block-why-us__video-overlay {
-    background: rgba(248, 250, 252, 0.92);
-  }
-  
-  .block-why-us__progress {
-    display: none;
-  }
-  
-  .block-why-us__items {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 100%;
-  }
-  
-  .block-why-us__item {
-    position: relative;
-    top: auto;
-    left: auto;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    pointer-events: auto;
-  }
-  
-  .block-why-us__box {
-    padding: 2rem 1.5rem;
-  }
-  
-  .block-why-us__box-heading span {
-    opacity: 1 !important;
-    color: var(--color-base) !important;
+    background: rgba(248, 250, 252, 0.88);
   }
 }
