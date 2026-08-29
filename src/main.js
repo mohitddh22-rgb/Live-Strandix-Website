@@ -57,15 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
   new CostCalculator();
   new SubpageRouter();
 
-  // Horizontal Sliders for About and Numbers
+  // Horizontal Slider for About section (Desktop only)
   const aboutBlock = document.querySelector('.block-about');
-  if (aboutBlock && window.innerWidth >= 768) {
+  if (aboutBlock && window.innerWidth >= 992) {
     new HorizontalSlider(aboutBlock, '.block-about__horizontal-inner');
-  }
-
-  const numbersBlock = document.querySelector('.block-numbers');
-  if (numbersBlock && window.innerWidth >= 768) {
-    new HorizontalSlider(numbersBlock, '.block-numbers__items-inner');
   }
 
   // Smooth scroll to anchors

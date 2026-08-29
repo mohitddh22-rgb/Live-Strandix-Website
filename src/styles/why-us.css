@@ -1,10 +1,10 @@
 /* ==========================================================================
-   BLOCK: WHY US (VIDEO SCRUBBING & RIGHT-ALIGNED NARRATIVE)
+   BLOCK: WHY US (VIDEO SCRUBBING ON DESKTOP & FLUID NARRATIVE ON MOBILE)
    ========================================================================== */
 
 .block-why-us {
   position: relative;
-  min-height: 300vh;
+  min-height: 280vh;
   background-color: var(--color-surface-light);
   color: var(--color-base);
 }
@@ -44,12 +44,6 @@
   inset: 0;
   background: radial-gradient(circle at 80% 50%, rgba(248, 250, 252, 0.95) 0%, rgba(248, 250, 252, 0.7) 40%, rgba(248, 250, 252, 0.1) 80%);
   pointer-events: none;
-}
-
-@media (max-width: 991px) {
-  .block-why-us__video-overlay {
-    background: rgba(248, 250, 252, 0.85);
-  }
 }
 
 /* Top Progress Bar */
@@ -117,32 +111,32 @@
   pointer-events: auto;
 }
 
-/* Crisp Architectural Box (NO AI Neon Border) */
+/* Crisp Architectural Box */
 .block-why-us__box {
   background: #ffffff;
   border: 1px solid var(--color-stroke);
   border-radius: 1.25rem;
-  padding: 3rem 2.5rem;
+  padding: 2.75rem 2.25rem;
   box-shadow: var(--shadow-lg);
   position: relative;
 }
 
 .block-why-us__box-label {
   display: inline-block;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-blue-600);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .block-why-us__box-heading {
-  font-size: clamp(1.85rem, 2.5vw, 2.35rem);
-  font-weight: 500;
-  line-height: 1.15;
+  font-size: clamp(1.65rem, 2.3vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--color-base);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .block-why-us__box-heading span {
@@ -151,7 +145,7 @@
 }
 
 .block-why-us__box-description {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--color-gray-600);
 }
@@ -159,21 +153,76 @@
 .block-why-us__metrics {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--color-gray-100);
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-stroke);
 }
 
 .block-why-us__metric-val {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-blue-600);
   line-height: 1;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .block-why-us__metric-label {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (FLUID CARD FLOW, ZERO TOUCH-LOCKING)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .block-why-us {
+    min-height: auto;
+    padding: 3.5rem 0;
+  }
+  
+  .block-why-us__sticky-container {
+    position: relative;
+    height: auto;
+    display: block;
+  }
+  
+  .block-why-us__video {
+    opacity: 0.3;
+  }
+  
+  .block-why-us__video-overlay {
+    background: rgba(248, 250, 252, 0.92);
+  }
+  
+  .block-why-us__progress {
+    display: none;
+  }
+  
+  .block-why-us__items {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .block-why-us__item {
+    position: relative;
+    top: auto;
+    left: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto;
+  }
+  
+  .block-why-us__box {
+    padding: 2rem 1.5rem;
+  }
+  
+  .block-why-us__box-heading span {
+    opacity: 1 !important;
+    color: var(--color-base) !important;
+  }
 }

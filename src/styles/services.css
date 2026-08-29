@@ -170,3 +170,24 @@
   color: var(--color-gray-500);
   line-height: 1.45;
 }
+
+@media (max-width: 991px) {
+  .block-services {
+    padding: 3.5rem 0;
+  }
+  .block-services__panels {
+    gap: 1.5rem;
+  }
+  .block-services__panel {
+    position: relative;
+    top: auto;
+    padding: 2rem 1.5rem;
+    gap: 1.75rem;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+  .block-services__panel-features {
+    grid-template-columns: 1fr;
+  }
+}

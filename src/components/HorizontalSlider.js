@@ -5,7 +5,7 @@ export class HorizontalSlider {
   constructor(element, innerSelector) {
     this.el = element;
     this.inner = this.el?.querySelector(innerSelector);
-    if (this.el && this.inner) {
+    if (this.el && this.inner && window.innerWidth >= 992) {
       this.init();
     }
   }
@@ -14,7 +14,7 @@ export class HorizontalSlider {
     const getScrollAmount = () => {
       const innerWidth = this.inner.scrollWidth;
       const viewportWidth = window.innerWidth;
-      return -(innerWidth - viewportWidth + 60);
+      return -(innerWidth - viewportWidth + 80);
     };
 
     if (getScrollAmount() >= 0) return;
@@ -24,7 +24,7 @@ export class HorizontalSlider {
       ease: 'none',
       scrollTrigger: {
         trigger: this.el,
-        start: 'top top+=60',
+        start: 'top 70px',
         end: () => `+=${Math.abs(getScrollAmount())}`,
         pin: true,
         scrub: 0.6,

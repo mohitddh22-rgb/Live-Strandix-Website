@@ -14,6 +14,15 @@ export class WhyUsScrubber {
   }
 
   init() {
+    if (window.innerWidth < 992) {
+      if (this.video) {
+        this.video.autoplay = true;
+        this.video.loop = true;
+        this.video.play().catch(() => {});
+      }
+      return;
+    }
+
     this.setupSplitText();
     this.setupVideoScrubbing();
     this.setupScrollTriggers();
@@ -38,7 +47,7 @@ export class WhyUsScrubber {
         for (let i = 0; i < word.length; i++) {
           const charSpan = document.createElement('span');
           charSpan.textContent = word[i];
-          charSpan.style.opacity = index === 0 ? '1' : '0.2';
+          charSpan.style.opacity = index === 0 ? '1' : '0.22';
           charSpan.style.color = 'var(--color-base)';
           charSpan.style.transition = 'opacity 0.25s ease, color 0.25s ease';
           wordSpan.appendChild(charSpan);
@@ -108,7 +117,7 @@ export class WhyUsScrubber {
         if (activeIdx >= totalItems) activeIdx = totalItems - 1;
         if (activeIdx < 0) activeIdx = 0;
 
-        // Sub-progress within the active card (0 to 1)
+        // Sub-progress within active card (0 to 1)
         const subProgress = Math.min(Math.max((progress * totalItems) - activeIdx, 0), 1);
 
         this.items.forEach((item, idx) => {
@@ -118,7 +127,6 @@ export class WhyUsScrubber {
             // Highlight text characters based on sub-progress
             const chars = this.splitChars[idx];
             if (chars && chars.length > 0) {
-              // Ensure minimum visible illumination ratio so text is always clear
               const highlightRatio = Math.min(subProgress / 0.75, 1);
               const highlightCount = Math.floor(highlightRatio * chars.length);
               
