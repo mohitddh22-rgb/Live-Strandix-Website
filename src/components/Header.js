@@ -28,7 +28,7 @@ export class Header {
     });
 
     // Initial check
-    this.updateHeaderTheme(themedSections[0]?.dataset.theme || 'dark');
+    this.updateHeaderTheme(themedSections[0]?.dataset.theme || 'light');
   }
 
   updateHeaderTheme(theme) {
@@ -43,18 +43,48 @@ export class Header {
   initMobileDrawer() {
     const toggler = this.el.querySelector('[data-toggler]');
     const overlay = this.el.querySelector('[data-overlay]');
+    const closeBtn = this.el.querySelector('[data-close-mobile-menu]');
+
+    const closeMenu = () => {
+      toggler?.classList.remove('-active');
+      overlay?.classList.remove('-active');
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      toggler?.classList.add('-active');
+      overlay?.classList.add('-active');
+      document.body.style.overflow = 'hidden';
+    };
 
     if (toggler && overlay) {
-      toggler.addEventListener('click', () => {
-        toggler.classList.toggle('-active');
-        overlay.classList.toggle('-active');
+      toggler.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (overlay.classList.contains('-active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
 
-      overlay.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          toggler.classList.remove('-active');
-          overlay.classList.remove('-active');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeMenu();
         });
+      }
+
+      overlay.querySelectorAll('a, button').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+
+      // Escape key to close mobile menu
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('-active')) {
+          closeMenu();
+        }
       });
     }
   }

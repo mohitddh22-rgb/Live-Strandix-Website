@@ -125,14 +125,21 @@
       </div>
 
       <!-- Mobile Hamburger Toggler -->
-      <button class="block-header__toggler" data-toggler aria-label="Toggle menu">
+      <button class="block-header__toggler" data-toggler aria-label="Open menu">
         <span class="block-header__toggler-line"></span>
         <span class="block-header__toggler-line"></span>
       </button>
     </div>
 
     <!-- Mobile Drawer Overlay -->
-    <div class="block-header__overlay" data-overlay>
+    <div class="block-header__overlay" data-overlay data-lenis-prevent>
+      <div class="block-header__overlay-header">
+        <img src="./assets/images/strandix_logo.png" alt="Strandix System" style="height: 34px; width: auto;" />
+        <button class="block-header__overlay-close" data-close-mobile-menu aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
       <ul class="block-header__overlay-nav-list">
         <li><a href="#about">About Strandix</a></li>
         <li><a href="#" data-open-subpage="subpage-our-team">Our Leadership</a></li>
@@ -140,8 +147,13 @@
         <li><a href="#" data-open-subpage="subpage-case-studies">Case Studies</a></li>
         <li><a href="#" data-open-subpage="subpage-careers">Careers & Perks</a></li>
         <li><a href="#" data-open-modal="cost-calculator-modal">Instant Cost Calculator</a></li>
-        <li><a href="#" data-open-modal="contact-modal">Contact Us</a></li>
       </ul>
+
+      <div class="block-header__overlay-footer">
+        <div class="wp-block-button is-style-gradient is-style-symbol is-style-huge" style="width: 100%;">
+          <a href="#" data-open-modal="contact-modal" class="wp-block-button__link" style="width: 100%;">Contact Us</a>
+        </div>
+      </div>
     </div>
   </header>
 
